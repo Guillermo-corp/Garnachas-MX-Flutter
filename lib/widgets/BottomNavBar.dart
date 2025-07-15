@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 const Color inActiveIconColor = Color(0xFFB6B6B6);
 

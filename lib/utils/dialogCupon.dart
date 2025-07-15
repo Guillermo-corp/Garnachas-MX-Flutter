@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_application_1/utils/snackbar_utils.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_application_1/providers/product_provider.dart';
+import 'package:flutter_application_1/models/cart_service.dart';
 
 Future<void> mostrarCuponesDialog(BuildContext context) async {
   final email = FirebaseAuth.instance.currentUser?.email;
@@ -68,6 +69,7 @@ Future<void> mostrarCuponesDialog(BuildContext context) async {
                     context,
                     listen: false,
                   ).applyVoucher(doubleDescuento, codigo: cupon['codigo']);
+                  applyDiscountToCartItems(doubleDescuento);
                   showSuccessSnackbar(
                     context,
                     'Cupón aplicado',

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/catalogo_screen.dart';
 import 'package:flutter_application_1/screens/home_screen.dart';
 import 'package:flutter_application_1/screens/profile_screen.dart';
-import 'package:flutter_application_1/widgets/BottomNavBar.dart';
+import 'package:flutter_application_1/widgets/bottomNavBar.dart';
 import 'package:flutter_application_1/utils/snackbar_utils.dart';
 
 class MainNavigationScreen extends StatefulWidget {

@@ -3,7 +3,7 @@ import 'package:flutter_application_1/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_application_1/firebase_options.dart';
 import 'package:flutter_application_1/constants.dart';
-import 'package:flutter_application_1/utils/MainNavigation.dart';
+import 'package:flutter_application_1/utils/mainNavigation.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:flutter_application_1/providers/product_provider.dart';

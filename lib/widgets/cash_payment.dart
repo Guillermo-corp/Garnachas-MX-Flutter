@@ -214,14 +214,14 @@ void showCashPaymentForm(BuildContext context) {
                               (item) => {
                                 'nombre': item.title,
                                 'cantidad': item.quantity,
-                                'precio': item.price,
+                                'precio': item.priceWithDiscount ?? item.price,
                               },
                             )
                             .toList();
 
                         final total = cartItems.fold<double>(
                           0,
-                          (sum, item) => sum + (item.price * item.quantity),
+                          (sum, item) => sum + ((item.priceWithDiscount ?? item.price) * item.quantity),
                         );
 
                         final response = await http.post(
@@ -285,6 +285,7 @@ void showCashPaymentForm(BuildContext context) {
                             }),
                           );
                           provider.removeVoucher();
+                          removeDiscountFromCartItems();
                         }
 
                         clearCart();

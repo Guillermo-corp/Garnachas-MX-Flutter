@@ -13,7 +13,12 @@ void addToCart(Product product) {
   if (index != -1) {
     cartItems[index].quantity += 1;
   } else {
-    final newProduct = product.copyWith(quantity: 1);
+    final newProduct = product.copyWith(
+      quantity: 1,
+      priceWithDiscount: product.priceWithDiscount,
+      images: List<String>.from(product.images),
+      colors: List<Color>.from(product.colors),
+    );
     cartItems.add(newProduct);
   }
   _updateCartCount();
@@ -34,7 +39,10 @@ int getTotalCartItems() {
 }
 
 int getCartTotalInCents() {
-  final total = cartItems.fold(0.0, (sum, item) => sum + item.price * item.quantity);
+  final total = cartItems.fold(
+    0.0,
+    (sum, item) => sum + ((item.priceWithDiscount ?? item.price)  * item.quantity),
+  );
   return (total * 100).toInt();
 }
 

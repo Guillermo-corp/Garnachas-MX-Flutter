@@ -21,7 +21,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
- /*  int _selectedIndex = 0; */
+  /*  int _selectedIndex = 0; */
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   /* void _onDestinationSelected(int index) {
@@ -183,9 +183,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             trailing: Text(
                               "\$${((product.priceWithDiscount ?? product.price) * product.quantity).toStringAsFixed(2)}",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                color: Colors.green,
+                                color: product.priceWithDiscount != null
+                                    ? Colors.green
+                                    : const Color(0xFFFF7643),
                               ),
                             ),
                           );
